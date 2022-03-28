@@ -25,7 +25,7 @@ document.addEventListener('keydown', function (e) {
     let letra = e.key.toUpperCase();
 
     /* Controlador que nos echa si no es una letra o si se ha acabado el juego. */
-    if (!/^[A-Z]$/i.test(letra) || estado.gameStatus != 0) {
+    if (!/^\w$/i.test(letra) || estado.gameStatus != 0) {
         return;
     }
 
@@ -36,12 +36,16 @@ document.addEventListener('keydown', function (e) {
     }
 
     /* Bucle en el que cambiamos asteriscos por letras. */
-    estado.film.split('').forEach((element, index) => {
+    estado.film.split('').forEach(async (element, index) => {
         if (letra == element) {
             document.querySelectorAll('span')[index].innerHTML = element;
             if (win()) {
                 estado.gameStatus = 1;
-                DOM.guesses.innerHTML = 'You win!';
+                DOM.guesses.innerHTML = `👍 Has ganado`;
+                let img = await getPoster(estado.film);
+                document.querySelector('body').style.backgroundImage = `url(${img})`;
+
+                new Audio('./sounds/win.wav').play();                
             }
         }
     });
@@ -53,6 +57,8 @@ document.addEventListener('keydown', function (e) {
 
         if (estado.tryCount <= 0) {
             estado.gameStatus = 2;
+            DOM.guesses.innerHTML = `👎 Has perdido`;
+            new Audio('./sounds/lost.wav').play();
         }
 
     }
@@ -98,9 +104,9 @@ function win() {
 async function init() {
     // Mostrar el tryCount
     DOM.guesses.innerHTML = estado.tryCount;
+    document.querySelector('body').style.backgroundImage = '';
     // Proceso cuando iniciamos la aplicación.
-    let pelicula = await randomPhrase();
-    console.log(pelicula);
+    let pelicula = await randomPhrase();    
     generateWord(pelicula);
 }
 
