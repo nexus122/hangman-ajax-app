@@ -6,10 +6,10 @@ Un tradicional juego del ahorcado, tienes que adivinar la pelicula
 	- [El reto](#El-reto)
 	- [Screenshot](#Screenshot)
 	- [Links](#Links)
-- [Proceso de creación](#Proceso&#32;de&#32;creación)
-	- [¿Que he aprendido?](#¿Que&#32;he&#32;aprendido?)
-	- [Kaizen o Desarollo Continuado](#Kaizen&#32;o&#32;Desarollo&#32;Continuado)
-	- [Recursos útiles](#Recursos&#32;útiles)
+- [Proceso de creación](#Proceso-de-creación)
+	- [¿Que he aprendido?](#¿Que-he-aprendido?)
+	- [Kaizen o Desarollo Continuado](#Kaizen-o-Desarollo-Continuado)
+	- [Recursos útiles](#Recursos-útiles)
 - [Autor](#Autor)
 
 ## Empezamos
