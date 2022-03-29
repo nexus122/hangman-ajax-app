@@ -25,14 +25,15 @@ document.addEventListener('keydown', function (e) {
     let letra = e.key.toUpperCase();
 
     /* Controlador que nos echa si no es una letra o si se ha acabado el juego. */
-    if (!/^\w$/i.test(letra) || estado.gameStatus != 0) {
+    if (!/^[A-Z:,'\-0-9]$/i.test(letra) || estado.gameStatus != 0) {
+        console.log("Letra Incorrecta: ", letra);
         return;
     }
 
     /* Añadimos la letra al array de letras. */
     if (!estado.letterArr.includes(letra)) {
         estado.letterArr.push(letra);
-        DOM.letters_tried.innerHTML = estado.letterArr
+        DOM.letters_tried.innerHTML = DOM.tryLetterFormat(estado.letterArr)
     }
 
     /* Bucle en el que cambiamos asteriscos por letras. */
@@ -58,7 +59,10 @@ document.addEventListener('keydown', function (e) {
         if (estado.tryCount <= 0) {
             estado.gameStatus = 2;
             DOM.guesses.innerHTML = `👎 Has perdido`;
+            DOM.body.style.backgroundImage = 'url(https://i.pinimg.com/originals/2e/0f/02/2e0f025c0351df89df6746c7fc739480.jpg)'
+            
             new Audio('./sounds/lost.wav').play();
+
         }
 
     }

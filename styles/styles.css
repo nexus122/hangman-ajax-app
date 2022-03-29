@@ -64,3 +64,11 @@ p {
 .button:hover {
     background: #5F3A87;
 }
+
+.correct{
+    color: green;
+}
+
+.incorrect{
+    color: red;
+}
