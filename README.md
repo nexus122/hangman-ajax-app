@@ -22,7 +22,7 @@ Los usuarios deben ser capaces de:
 - Si el usuario Pierde suena un sonido de derrota y se carga un meme en el fondo.
 
 ### Screenshot
-![[Pasted image 20220329193824.png]]
+![[./Captura.png]]
 ### Links
 - Codigo: [Código](https://github.com/nexus122/hangman-ajax-app)
 - Demo: [Demo](https://nexus122.github.io/hangman-ajax-app/)
