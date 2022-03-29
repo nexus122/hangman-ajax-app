@@ -3,7 +3,7 @@ Un tradicional juego del ahorcado, tienes que adivinar la pelicula
 
 ## Tabla de contenido
 - [Empezamos](#Empezamos)
-	- [El reto](#El&#32;reto)
+	- [El reto](#El-reto)
 	- [Screenshot](#Screenshot)
 	- [Links](#Links)
 - [Proceso de creación](#Proceso&#32;de&#32;creación)
