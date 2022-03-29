@@ -25,7 +25,7 @@ document.addEventListener('keydown', function (e) {
     let letra = e.key.toUpperCase();
 
     /* Controlador que nos echa si no es una letra o si se ha acabado el juego. */
-    if (!/^[A-Z:,'\-0-9]$/i.test(letra) || estado.gameStatus != 0) {
+    if (!/^[A-Z:,'\-0-9´ÁÉÍÓÚÀÈÌÒÙ]$/i.test(letra) || estado.gameStatus != 0) {
         console.log("Letra Incorrecta: ", letra);
         return;
     }
