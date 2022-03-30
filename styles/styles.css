@@ -72,3 +72,20 @@ p {
 .incorrect{
     color: red;
 }
+
+/* Animación de la letra repetida */
+.repetida {
+    background-color: red;
+    position: relative;
+    animation-name: errorAnimation;
+    animation-duration: 1s;
+    animation-timing-function: linear;        
+    animation-direction: alternate;
+  }
+  
+  /* Animacion que modifica la escala */
+  @keyframes errorAnimation {
+    0%   {transform: scale(1);}
+    50%  {transform: scale(1.5);}
+    100% {transform: scale(1);}
+  }
