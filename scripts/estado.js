@@ -7,9 +7,10 @@ let estado = {
         console.log('entramos en restar letra: ', letra);
 
         // Si la letra no esta en el titulo de la pelicula o si ya teniamos contemplada la letra en el array restamos uno
-        if (!this.film.includes(letra) || this.letterArr.includes(letra)) {            
+        console.log(this.letterArr.includes(letra));
+        if (!this.film.includes(letra)) {            
             this.tryCount--;
-            DOM.attempts.innerHTML = this.tryCount;            
+            DOM.attempts.innerHTML = this.tryCount;
 
             if (this.tryCount <= 0) {
                 // Si el contador llega a 0 perdemos
