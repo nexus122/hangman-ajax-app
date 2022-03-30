@@ -7,19 +7,19 @@ document.addEventListener('keydown', function (e) {
     let letra = e.key.toUpperCase();
 
     /* Controlador que nos echa si no es una letra o si se ha acabado el juego. */
-    if (!/^[A-Z:,.'\-0-9´ÁÉÍÓÚÀÈÌÒÙ]$/i.test(letra) || estado.gameStatus != 0) {
+    if (!/^[A-Z:,.'\-0-9´ÁÉÍÓÚÀÈÌÒÙ]$/i.test(letra) || ESTADO.gameStatus != 0) {
         console.log("Letra Incorrecta: ", letra);
         return;
     }
 
-    /* Añadimos la letra al array de letras. y alteramos la añadimos al estado*/
+    /* Añadimos la letra al array de letras. y alteramos la añadimos al ESTADO*/
     DOM.addLetters(letra);
     
     /* Bucle en el que cambiamos asteriscos por letras. */
     DOM.changeSecret(letra);
 
     /* Reducimos el contador si no encontramos la letra en el titulo */
-    estado.subtractAttempts(letra);
+    ESTADO.subtractAttempts(letra);
 
 })
 
@@ -27,18 +27,18 @@ document.addEventListener('keydown', function (e) {
 DOM.btn_reset.addEventListener('click', function () {
 
     // Reinicio de las variables.
-    estado.gameStatus = 0;
-    estado.tryCount = 5;
-    estado.letterArr = [];
+    ESTADO.gameStatus = 0;
+    ESTADO.tryCount = 5;
+    ESTADO.letterArr = [];
 
     // Limpieza del DOM.
     DOM.secret.innerHTML = '';
     DOM.letters_tried.innerHTML = '';        
-    DOM.guesses.innerHTML = `Te quedan <span>${estado.tryCount}</span> intentos.`
+    DOM.guesses.innerHTML = `Te quedan <span>${ESTADO.tryCount}</span> intentos.`
 
-    estado.init();
+    ESTADO.init();
 
 })
 
 // Funcion para iniciar la aplicación
-estado.init();
+ESTADO.init();

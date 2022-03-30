@@ -1,4 +1,4 @@
-let estado = {
+let ESTADO = {
     film: '', // String de la pelicula
     letterArr: [],
     tryCount: 5, // Numero Maximo de intentos
@@ -40,7 +40,7 @@ let estado = {
     },
     async init() {
         // Mostrar el tryCount
-        DOM.attempts.innerHTML = estado.tryCount;
+        DOM.attempts.innerHTML = this.tryCount;
         document.querySelector('body').style.backgroundImage = '';
 
         // Proceso cuando iniciamos la aplicación.
