@@ -3,13 +3,12 @@ let estado = {
     letterArr: [],
     tryCount: 5, // Numero Maximo de intentos
     gameStatus: 0, // Estado de la partida
-    subtractAttempts(letra){
-        console.log('entramos en restar letra: ', letra);
-
+    subtractAttempts(letra){        
         // Si la letra no esta en el titulo de la pelicula o si ya teniamos contemplada la letra en el array restamos uno
         console.log(this.letterArr.includes(letra));
         if (!this.film.includes(letra)) {            
             this.tryCount--;
+            
             DOM.attempts.innerHTML = this.tryCount;
 
             if (this.tryCount <= 0) {
@@ -43,8 +42,10 @@ let estado = {
         // Mostrar el tryCount
         DOM.attempts.innerHTML = estado.tryCount;
         document.querySelector('body').style.backgroundImage = '';
+
         // Proceso cuando iniciamos la aplicación.
-        let pelicula = await randomPhrase();    
-        DOM.generateWord(pelicula);
+        randomMovie((pelicula)=>{
+            DOM.generateWord(pelicula);
+        });        
     }
 }

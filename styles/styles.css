@@ -37,15 +37,18 @@ span {
 p {
     font-weight: 300;
     margin-bottom: 1.8rem;
+    text-align: center;
 }
 
 .puzzle {
     display: flex;
-    margin-bottom: 2.4rem;    
+    margin-bottom: 2.4rem;
+    justify-content: center;
 }
 .card{
     background-color: rgba(0,0,0,.5);
     padding: 2em;
+    min-width: 50%;
 }
 
 .button {
@@ -72,6 +75,33 @@ p {
 .incorrect{
     color: red;
 }
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    gap: 1em;
+    width: 100%;
+    justify-content: center;
+    font-size: 1em;
+    padding: 1em;    
+}
+
+footer ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover{
+    color: #7044a0;    
+}
+
 
 /* Animación de la letra repetida */
 .repetida {
